@@ -5,6 +5,8 @@ ruby "3.0.0"
 
 gem "mongoid", "~> 7.0.11"
 
+gem "faker"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 6.1.5"
 
