@@ -1,5 +1,6 @@
 require 'faker'
 require 'http'
+require 'nanoid'
 include ListHelper
 
 puts "Seeding data..."
@@ -46,6 +47,7 @@ end
 
 20.times do
   users[rand(0...4)].lists.create!(
+    _id: Nanoid.generate(size: 8),
     title: Faker::Lorem.sentence(word_count: 3),
     description: Faker::Quote.yoda,
     movies: generate_list_array,
