@@ -9,6 +9,8 @@ gem "faker"
 
 gem 'http'
 
+gem 'nanoid'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 6.1.5"
 
