@@ -12,7 +12,12 @@ puts "Creating users..."
 User.destroy_all
 
 5.times do
-  User.create!(username: Faker::Internet.unique.username, email: Faker::Internet.unique.email, password: Faker::Internet.password)
+  User.create!(
+    _id: Nanoid.generate(size: 8),
+    username: Faker::Internet.unique.username, 
+    email: Faker::Internet.unique.email, 
+    password: Faker::Internet.password
+  )
 end
 
 # Creates an array with all the users
