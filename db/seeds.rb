@@ -1,5 +1,6 @@
 require 'faker'
 require 'http'
+include ListHelper
 
 puts "Seeding data..."
 
@@ -31,10 +32,25 @@ def generate_list_array
 
   10.times do
     movie_id = rand(2...99999)
-    output.push(rand(2...99999))
+
+    while is_movie_id_valid(movie_id) == false
+      movie_id = rand(2...99999)
+    end
+
+      output.push(movie_id)
+
   end
 
   output
+end
+
+20.times do
+  users[rand(0...4)].lists.create!(
+    title: Faker::Lorem.sentence(word_count: 3),
+    description: Faker::Quote.yoda,
+    movies: generate_list_array,
+    is_public: true
+  )
 end
 
 puts "Done seeding!"
