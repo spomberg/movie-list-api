@@ -13,9 +13,9 @@ User.destroy_all
 puts "Creating users..."
 
 
-5.times do
+5.times do |index|
   User.create!(
-    _id: Nanoid.generate(size: 8),
+    _id: index,
     username: Faker::Internet.unique.username, 
     email: Faker::Internet.unique.email, 
     password: Faker::Internet.password
@@ -50,9 +50,9 @@ def generate_list_array
   output
 end
 
-20.times do
+20.times do |index|
   users[rand(0...4)].lists.create!(
-    _id: Nanoid.generate(size: 8),
+    _id: index,
     title: Faker::Lorem.sentence(word_count: 3),
     description: Faker::Quote.yoda,
     movies: generate_list_array,
