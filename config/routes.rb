@@ -4,21 +4,21 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root to: 'lists#index'
+  root to: 'list#index'
 
   resources :lists, only: [:index, :show, :new, :create, :edit, :search, :destroy]
 
   resources :users, only: [:index, :new, :create]
 
-  get '/lists' => 'lists#index'
-  get '/lists/:id' => 'lists#show'
+  get '/list' => 'list#index'
+  get '/list/:id' => 'list#show'
 
-  get '/users' => 'users#index'
-  get '/users/:id/lists' => 'users#show'
+  get '/user' => 'user#index'
+  get '/user/:id/lists' => 'user#show'
 
-  post '/add-list' => 'lists#new'
-  post '/lists/:id/edit' => 'lists#edit'
-  post '/lists/:id/delete' => 'lists#destroy'
-  post '/lists/search' => 'lists#search'
+  post '/list/add' => 'list#new'
+  post '/list/:id/edit' => 'list#edit'
+  post '/list/:id/delete' => 'list#destroy'
+  post '/list/search' => 'list#search'
 
 end
