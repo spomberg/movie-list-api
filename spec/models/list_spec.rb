@@ -12,4 +12,11 @@ RSpec.describe List, type: :model do
       expect(output).to eq true
     end
   end
+
+  context "with an invalid movie id" do
+    it "returns false" do
+      output = is_movie_id_valid(95518)
+      expect(output).to eq false
+    end
+  end
 end
