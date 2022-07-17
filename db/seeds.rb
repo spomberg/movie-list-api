@@ -5,11 +5,13 @@ include ListHelper
 
 puts "Seeding data..."
 
+List.destroy_all
+User.destroy_all
+
 # Users
 
 puts "Creating users..."
 
-User.destroy_all
 
 5.times do
   User.create!(
@@ -30,8 +32,6 @@ end
 # Lists
 
 puts "Creating lists..."
-
-List.destroy_all
 
 def generate_list_array 
   output = []
@@ -56,7 +56,8 @@ end
     title: Faker::Lorem.sentence(word_count: 3),
     description: Faker::Quote.yoda,
     movies: generate_list_array,
-    is_public: true
+    is_public: true,
+    created_on: Faker::Date.backward(days: 2)
   )
 end
 
