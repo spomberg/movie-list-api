@@ -6,15 +6,15 @@ Rails.application.routes.draw do
 
   root to: 'list#index'
 
-  resources :lists, only: [:index, :show, :new, :create, :edit, :search, :destroy]
+  resources :list, only: [:index, :show, :view, :new, :create, :edit, :search, :destroy]
 
-  resources :users, only: [:index, :new, :create]
+  resources :user, only: [:index, :new, :create]
 
-  get '/list' => 'list#index'
-  get '/list/:id' => 'list#show'
+  get '/lists/' => 'list#index'
+  get '/lists/:id' => 'list#show'
 
   get '/user' => 'user#index'
-  get '/user/:id/lists' => 'user#show'
+  get '/user/:id/list' => 'user#show'
 
   post '/list/add' => 'list#new'
   post '/list/:id/edit' => 'list#edit'
