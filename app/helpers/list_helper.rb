@@ -25,6 +25,18 @@ module ListHelper
     output
   end
 
+  def get_cast(movie)
+    output = []
+
+    5.times do |index|
+      if movie["credits"]["cast"][index] != nil
+        output.push(movie["credits"]["cast"][index]["name"])
+      end
+    end
+
+    output
+  end
+
   def extract_movie_info(id)
     movie_details = (HTTP.get("https://api.themoviedb.org/3/movie/#{id}?api_key=#{ENV['TMDB_API_KEY']}&&append_to_response=credits")).parse
     
@@ -36,7 +48,7 @@ module ListHelper
       release_date: movie_details['release_date'],
       runtime: movie_details['runtime'],
       directed_by: get_directors(movie_details),
-      cast: movie_details["credits"]["cast"]
+      cast: get_cast(movie_details)
     }
   end
 
