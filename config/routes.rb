@@ -8,13 +8,13 @@ Rails.application.routes.draw do
 
   resources :list, only: [:index, :show, :view, :new, :create, :edit, :search, :destroy]
 
-  resources :user, only: [:index, :new, :create]
+  resources :user, only: [:show, :new, :create]
 
   get '/lists/' => 'list#index'
   get '/lists/:id' => 'list#show'
 
   get '/user' => 'user#index'
-  get '/user/:id/list' => 'user#show'
+  get '/user/:id' => 'user#show'
 
   post '/list/add' => 'list#new'
   post '/list/:id/edit' => 'list#edit'
