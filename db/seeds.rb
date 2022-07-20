@@ -1,6 +1,5 @@
 require 'faker'
 require 'http'
-require 'nanoid'
 include ListHelper
 
 puts "Seeding data..."
