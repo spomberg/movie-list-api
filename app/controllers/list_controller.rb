@@ -1,5 +1,6 @@
 class ListController < ApplicationController
   require 'http'
+  require 'nanoid'
   include ListHelper
 
   def index
@@ -29,4 +30,19 @@ class ListController < ApplicationController
 
     render json: output.to_json
   end
+
+  def new
+    new_list = {
+      _id: Nanoid.generate(size: 8),
+      title: params[:title],
+      description: params[:desc],
+      movies: [],
+      is_public: params[:is_public],
+      user_id: 0,
+      created_on: Time.now
+    }
+
+    List.create(new_list)
+  end
+
 end
