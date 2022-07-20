@@ -13,6 +13,21 @@ module ListHelper
   
   end
 
+  def get_list_index_info(lists)
+    output = []
+    
+    lists.each do |list|
+      output.push({
+        id: list["_id"],
+        title: list["title"],
+        username: User.find(list["user_id"])["username"],
+        created_on: list["created_on"]
+      })
+    end
+    
+    output
+  end
+
   def get_directors(movie)
     output = []
     
