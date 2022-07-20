@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   get '/lists/' => 'list#index'
   get '/lists/:id' => 'list#show'
 
-  get '/user' => 'user#index'
-  get '/user/:id' => 'user#show'
+  get '/user' => 'user#show'
 
   post '/list/add' => 'list#new'
   post '/list/:id/edit' => 'list#edit'
