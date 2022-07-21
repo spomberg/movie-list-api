@@ -45,4 +45,16 @@ class ListController < ApplicationController
     List.create(new_list)
   end
 
+  def edit
+    list = List.find(params[:id])
+
+    case params[:edit_action]
+      when "add" then add_movie(params["movie_id"].to_i, list)
+    end
+
+    list.upsert
+
+    render json: list.to_json
+  end
+
 end
