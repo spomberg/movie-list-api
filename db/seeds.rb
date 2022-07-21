@@ -4,8 +4,8 @@ include ListHelper
 
 puts "Seeding data..."
 
-List.destroy_all
-User.destroy_all
+List.delete_all
+User.delete_all
 
 # Users
 
