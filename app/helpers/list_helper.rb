@@ -73,4 +73,12 @@ module ListHelper
     end
   end
 
+  def remove_movie(id, list)
+    movie_index = list["movies"].find_index(id)
+
+    if movie_index != nil
+      list["movies"].delete_at(movie_index)
+    end
+  end
+
 end
