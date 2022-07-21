@@ -50,6 +50,7 @@ class ListController < ApplicationController
 
     case params[:edit_action]
       when "add" then add_movie(params["movie_id"].to_i, list)
+      when "remove" then remove_movie(params["movie_id"].to_i, list)
     end
 
     list.upsert
