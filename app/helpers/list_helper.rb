@@ -59,7 +59,7 @@ module ListHelper
       id: movie_details['id'],
       original_title: movie_details['original_title'],
       overview: movie_details['overview'],
-      poster_path: "https://image.tmdb.org/t/p/original#{movie_details['poster_path']}",
+      poster_path: movie_details['poster_path'] != nil ? "https://image.tmdb.org/t/p/original#{movie_details['poster_path']}" : "https://res.cloudinary.com/djv3yhbok/image/upload/v1658030155/1665px-No-Image-Placeholder.svg_jgp6ma.png" ,
       release_date: movie_details['release_date'],
       runtime: movie_details['runtime'],
       directed_by: get_directors(movie_details),
