@@ -50,6 +50,7 @@ class ListController < ApplicationController
 
     case params[:edit_action]
       when "change_title" then list["title"] = params["value"]
+      when "change_desc" then list["description"] = params["value"]
       when "add" then add_movie(params["value"].to_i, list)
       when "remove" then remove_movie(params["value"].to_i, list)
       when "is_public" then list["is_public"] = params["value"]
@@ -58,6 +59,12 @@ class ListController < ApplicationController
     list.upsert
 
     render json: list.to_json
+  end
+
+  def destroy
+    list = List.find(params[:id])
+
+    list.delete
   end
 
 end
