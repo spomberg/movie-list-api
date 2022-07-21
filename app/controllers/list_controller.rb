@@ -49,8 +49,9 @@ class ListController < ApplicationController
     list = List.find(params[:id])
 
     case params[:edit_action]
-      when "add" then add_movie(params["movie_id"].to_i, list)
-      when "remove" then remove_movie(params["movie_id"].to_i, list)
+      when "add" then add_movie(params["value"].to_i, list)
+      when "remove" then remove_movie(params["value"].to_i, list)
+      when "is_public" then list["is_public"] = params["value"]
     end
 
     list.upsert
