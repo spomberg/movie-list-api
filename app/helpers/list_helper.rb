@@ -67,4 +67,10 @@ module ListHelper
     }
   end
 
+  def add_movie(id, list)
+    unless list["movies"].include?(id) or !is_movie_id_valid(id)
+      list["movies"].push(id)
+    end
+  end
+
 end
