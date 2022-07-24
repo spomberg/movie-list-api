@@ -21,7 +21,8 @@ module ListHelper
         id: list["_id"],
         title: list["title"],
         username: User.find(list["user_id"])["username"],
-        created_on: list["created_on"]
+        created_on: list["created_on"],
+        index_poster: extract_movie_info(list["movies"][0])[:poster_path]
       })
     end
     
