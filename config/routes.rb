@@ -10,15 +10,15 @@ Rails.application.routes.draw do
 
   resources :user, only: [:show, :new, :create]
 
-  get '/lists/' => 'list#index'
-  get '/lists/:id' => 'list#show'
+  get 'api/lists/' => 'list#index'
+  get 'api/lists/:id' => 'list#show'
 
-  get '/user' => 'user#show'
+  get 'api/user' => 'user#show'
 
-  post '/list/new' => 'list#new'
-  post '/list/:id/delete' => 'list#destroy'
+  post 'api/list/new' => 'list#new'
+  post 'api/list/:id/delete' => 'list#destroy'
 
-  put '/list/:id/edit' => 'list#edit'
-  put '/list/:id/edit/search-movie' => 'list#search'
+  put 'api/list/:id/edit' => 'list#edit'
+  put 'api/list/:id/edit/search-movie' => 'list#search'
 
 end
