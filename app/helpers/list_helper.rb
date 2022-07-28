@@ -22,7 +22,7 @@ module ListHelper
         title: list["title"],
         username: User.find(list["user_id"])["username"],
         created_on: list["created_on"],
-        index_poster: extract_movie_info(list["movies"][0])[:poster_path]
+        index_poster: list["movies"].length == 0 ? nil : extract_movie_info(list["movies"][0])[:poster_path]
       })
     end
     
@@ -32,6 +32,10 @@ module ListHelper
   def get_directors(movie)
     output = []
     
+    if movie == nil
+      return
+    end
+
     movie["credits"]["crew"].each do |crew_member|
       if crew_member["job"] == "Director"
         output.push(crew_member["name"])
@@ -44,6 +48,10 @@ module ListHelper
   def get_cast(movie)
     output = []
 
+    if movie == nil
+      return
+    end
+
     5.times do |index|
       if movie["credits"]["cast"][index] != nil
         output.push(movie["credits"]["cast"][index]["name"])
@@ -54,6 +62,10 @@ module ListHelper
   end
 
   def extract_movie_info(id)
+    if id == nil
+      return
+    end
+    
     movie_details = (HTTP.get("https://api.themoviedb.org/3/movie/#{id}?api_key=#{ENV['TMDB_API_KEY']}&&append_to_response=credits")).parse
     
     return {
