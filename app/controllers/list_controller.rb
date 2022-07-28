@@ -41,7 +41,7 @@ class ListController < ApplicationController
       title: params[:title],
       description: params[:desc],
       movies: [],
-      is_public: params[:is_public],
+      is_public: params[:is_public] == nil ? false : params[:is_public],
       user_id: 0,
       created_on: Time.now
     }
