@@ -52,7 +52,7 @@ end
 20.times do |index|
   users[rand(0...4)].lists.create!(
     _id: index,
-    title: Faker::Lorem.sentence(word_count: 3),
+    title: "#{Faker::Name.first_name}'s Movie List",
     description: Faker::Quote.yoda,
     movies: generate_list_array,
     is_public: true,
