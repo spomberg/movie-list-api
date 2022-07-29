@@ -55,13 +55,9 @@ class ListController < ApplicationController
     if List.where(id: params[:id]).exists? 
       list = List.find(params[:id])
 
-      case params[:edit_action]
-        when "change_title" then list["title"] = params["value"]
-        when "change_desc" then list["description"] = params["value"]
-        when "add" then add_movie(params["value"].to_i, list)
-        when "remove" then remove_movie(params["value"].to_i, list)
-        when "is_public" then list["is_public"] = params["value"]
-      end
+      list["title"] = params["title"]
+      list["description"] = params["desc"]
+      list["is_public"] = params["is_public"]
 
       list.upsert
 
