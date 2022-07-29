@@ -48,7 +48,7 @@ class ListController < ApplicationController
 
     List.create(new_list)
 
-    render json: { status: "success", code: 200, message: "List created successfully" }
+    render json: new_list.to_json
   end
 
   def edit
