@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   get 'api/user' => 'user#show'
 
   post 'api/list/new' => 'list#new'
-  post 'api/list/:id/delete' => 'list#destroy'
 
   put 'api/list/:id/edit' => 'list#edit'
   put 'api/list/:id/edit/search-movie' => 'list#search'
-
+  
+  delete 'api/list/:id/delete' => 'list#destroy'
+  
 end
