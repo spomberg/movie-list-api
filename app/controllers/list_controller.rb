@@ -55,13 +55,19 @@ class ListController < ApplicationController
     if List.where(id: params[:id]).exists? 
       list = List.find(params[:id])
 
-      list["title"] = params["title"]
-      list["description"] = params["desc"]
-      list["is_public"] = params["is_public"]
+      if params["add_movie"] == nil && params["remove_movie"] == nil
+        list["title"] = params["title"]
+        list["description"] = params["desc"]
+        list["is_public"] = params["is_public"]
+      end
+
+      if params["remove_movie"] != nil
+        remove_movie(params["remove_movie"].to_i, list)
+      end
 
       list.upsert
 
-      render json: list.to_json
+      render json: { status: "success", code: 200, list: list }
     else
       render json: { status: "error", code: 404, message: "Can't find list" }
     end
