@@ -28,10 +28,20 @@ RSpec.describe List, type: :model do
   end
 
   context "with a valid index and array" do
-    it "moves the element up" do
+    xit "moves the element up" do
       mock_arr = [1, 2, 3, 4, 5]
       output = move_up(mock_arr, 2)
       expected_result = [1, 3, 2, 4, 5]
+
+      expect(output).to eq expected_result
+    end
+  end
+
+  context "if the index is 0" do
+    xit "doesn't do anything" do
+      mock_arr = [1, 2, 3, 4, 5]
+      output = move_up(mock_arr, 0)
+      expected_result = mock_arr
 
       expect(output).to eq expected_result
     end
