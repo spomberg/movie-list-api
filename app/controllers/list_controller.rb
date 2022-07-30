@@ -55,7 +55,7 @@ class ListController < ApplicationController
     if List.where(id: params[:id]).exists? 
       list = List.find(params[:id])
 
-      if params["add_movie"] == nil && params["remove_movie"] == nil
+      if params["title"] != nil || params["description"] != nil || params["is_public"] != nil
         list["title"] = params["title"]
         list["description"] = params["desc"]
         list["is_public"] = params["is_public"]
@@ -63,6 +63,14 @@ class ListController < ApplicationController
 
       if params["remove_movie"] != nil
         remove_movie(params["remove_movie"].to_i, list)
+      end
+
+      if params["move_up"] != nil
+        move_up(list["movies"], params["move_up"])
+      end
+
+      if params["move_down"] != nil
+        move_down(list["movies"], params["move_down"])
       end
 
       list.upsert
