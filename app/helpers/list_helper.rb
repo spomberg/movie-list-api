@@ -95,6 +95,11 @@ module ListHelper
   end
 
   def move_up(arr, index)
+    if index > 0
+      arr[index - 1, 2] = arr[index - 1, 2].reverse
+      arr
+    end
+
     arr
   end
 
