@@ -46,6 +46,7 @@ RSpec.describe 'is_movie_id_valid' do
       expect(output).to eq expected_result
     end
   end
+
   context "with a valid index and array" do
     it "moves the element up" do
       mock_arr = [1, 2, 3, 4, 5]
@@ -72,8 +73,8 @@ RSpec.describe 'move_up' do
   context "with a valid index and array" do
     it "moves the element up" do
       mock_arr = [1, 2, 3, 4, 5]
-      output = move_up(mock_arr, 2)
-      expected_result = [1, 3, 2, 4, 5]
+      output = move_up(mock_arr, 1)
+      expected_result = [2, 1, 3, 4, 5]
   
       expect(output).to eq expected_result
     end
@@ -84,6 +85,19 @@ RSpec.describe 'move_up' do
       mock_arr = [1, 2, 3, 4, 5]
       output = move_up(mock_arr, 0)
       expected_result = mock_arr
+  
+      expect(output).to eq expected_result
+    end
+  end
+
+end
+
+RSpec.describe 'move_down' do
+  context "with a valid index and array" do
+    it "moves the element down" do
+      mock_arr = [1, 2, 3, 4, 5]
+      output = move_down(mock_arr, 1)
+      expected_result = [1, 3, 2, 4, 5]
   
       expect(output).to eq expected_result
     end
