@@ -103,4 +103,14 @@ RSpec.describe 'move_down' do
     end
   end
 
+  context "the index is the last element in the array" do
+    it "doesn't do anything" do
+      mock_arr = [1, 2, 3, 4, 5]
+      output = move_down(mock_arr, 4)
+      expected_result = mock_arr
+  
+      expect(output).to eq expected_result
+    end
+  end
+
 end
