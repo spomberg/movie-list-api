@@ -66,11 +66,11 @@ class ListController < ApplicationController
       end
 
       if params["move_up"] != nil
-        move_up(list["movies"], params["move_up"])
+        move_up(list["movies"], params["move_up"].to_i)
       end
 
       if params["move_down"] != nil
-        move_down(list["movies"], params["move_down"])
+        move_down(list["movies"], params["move_down"].to_i)
       end
 
       list.upsert
