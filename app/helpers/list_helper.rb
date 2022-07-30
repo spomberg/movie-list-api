@@ -5,7 +5,7 @@ module ListHelper
   def is_movie_id_valid(id)
     movie_details = (HTTP.get("https://api.themoviedb.org/3/movie/#{id}?api_key=#{ENV['TMDB_API_KEY']}&language=en-US")).parse
 
-    if movie_details['original_title'] != nil
+    if movie_details['original_title'] != nil && movie_details['adult'] == false
       return true
     end
     
