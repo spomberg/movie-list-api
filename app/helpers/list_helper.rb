@@ -94,4 +94,8 @@ module ListHelper
     end
   end
 
+  def move_up(arr, index)
+    arr
+  end
+
 end
