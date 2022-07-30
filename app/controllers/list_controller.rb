@@ -4,7 +4,7 @@ class ListController < ApplicationController
   include ListHelper
 
   def index
-    lists = List.where(:is_public => true).order_by([:created_on, :desc]).limit(-10)
+    lists = List.where(:is_public => true).order_by([:created_on, :desc])
 
     output = get_list_index_info(lists)
 
