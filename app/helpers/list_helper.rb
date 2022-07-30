@@ -103,4 +103,12 @@ module ListHelper
     arr
   end
 
+  def move_down(arr, index)
+    if index < arr.length - 1
+      arr[index, 2] = arr[index, 2].reverse
+    end
+
+    arr
+  end
+
 end
