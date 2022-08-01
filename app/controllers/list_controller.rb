@@ -98,9 +98,9 @@ class ListController < ApplicationController
     search_param = params[:query].gsub(" ", "&20")
     search_results = (HTTP.get("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['TMDB_API_KEY']}&query=#{search_param}")).parse
 
-    5.times do |index|
-      if search_results["results"][index] != nil
-        output.push(search_results["results"][index])
+    search_results["results"].each do |result|
+      if result["original_title"] != nil
+        output.push(result)
       end
     end
 
