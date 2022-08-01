@@ -61,10 +61,6 @@ class ListController < ApplicationController
         list["is_public"] = params["is_public"]
       end
 
-      if params["add_movie"] != nil
-        add_movie(params["add_movie"].to_i, list)
-      end
-
       if params["remove_movie"] != nil
         remove_movie(params["remove_movie"].to_i, list)
       end
