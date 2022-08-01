@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post 'api/list/new' => 'list#new'
 
   put 'api/list/:id/edit' => 'list#edit'
-  put 'api/list/:id/edit/search-movie' => 'list#search'
+  put 'api/list/search-movie' => 'list#search'
   
   delete 'api/list/:id/delete' => 'list#destroy'
   
