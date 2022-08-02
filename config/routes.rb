@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root to: 'list#index'
+  root to: "application#cookie"
 
   resources :list, only: [:index, :show, :view, :new, :create, :edit, :search, :destroy]
 
