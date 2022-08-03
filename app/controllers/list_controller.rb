@@ -1,7 +1,7 @@
 class ListController < ApplicationController
   require 'http'
   require 'nanoid'
-  include ListHelper
+  include ListHelper, UserHelper
 
   def index
     lists = List.where(:is_public => true).order_by([:created_on, :desc]).limit(10)
@@ -86,15 +86,19 @@ class ListController < ApplicationController
   end
 
   def destroy
-    if List.where(id: params[:id]).exists? 
+    if List.where(:id => params[:id]).exists?
       list = List.find(params[:id])
+    end
 
+    if !list
+      render json: { status: "error", code: 404, message: "Can't find list!" }
+    elsif list && get_user_id == list["user_id"]
       list.delete
-
       render json: { status: "success", code: 200, message: "List deleted successfully" }
     else
-      render json: { status: "error", code: 404, message: "Can't find list" }
+      render json: { status: "error", code: 401, message: "Invalid credentials!" }
     end
+
   end
 
   def search
