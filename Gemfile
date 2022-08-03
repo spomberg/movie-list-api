@@ -7,13 +7,17 @@ gem "mongoid", "~> 7.0.11"
 
 gem "faker"
 
-gem 'http'
+gem "http"
 
-gem 'nanoid'
+gem "nanoid"
 
-gem 'rack-cors'
+gem "rack-cors"
 
 gem "rails_same_site_cookie"
+
+gem "jwt"
+
+gem "bcrypt"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 6.1.5"

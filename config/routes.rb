@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :list, only: [:index, :show, :view, :new, :create, :edit, :search, :destroy]
 
-  resources :user, only: [:show, :new, :create]
+  resources :user
 
   get 'api/lists/' => 'list#index'
   get 'api/lists/:id' => 'list#show'
@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'api/user' => 'user#show'
 
   post 'api/list/new' => 'list#new'
+  post 'api/user/new' => 'user#create'
+  post 'api/auth/login' => 'authentication#login'
 
   put 'api/list/:id/edit' => 'list#edit'
   put 'api/list/search-movie' => 'list#search'
