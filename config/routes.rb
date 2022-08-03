@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'api/lists/' => 'list#index'
   get 'api/lists/:id' => 'list#show'
 
-  get 'api/user' => 'user#show'
+  get 'api/user/lists' => 'user#show'
 
   post 'api/list/new' => 'list#new'
   post 'api/login' => 'session#login'
