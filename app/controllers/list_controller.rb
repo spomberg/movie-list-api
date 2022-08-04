@@ -98,6 +98,21 @@ class ListController < ApplicationController
     end
   end
 
+  def edit_view
+    if List.where(id: params[:id]).exists? 
+      list = List.find(params[:id])
+
+      if get_user_id == list["user_id"]
+        show
+      else
+        render json: { status: "error", code: 401, message: "Invalid credentials!" }
+      end
+
+    else
+      render json: { status: "error", code: 404, message: "Can't find list" }
+    end
+  end
+
   def destroy
     if List.where(:id => params[:id]).exists?
       list = List.find(params[:id])
