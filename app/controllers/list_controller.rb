@@ -30,7 +30,7 @@ class ListController < ApplicationController
           movies: movies
         }
   
-        render json: output.to_json
+        render json: { status: "success", code: 200, list: output }
       else
         render json: { status: "error", code: 401, message: "Invalid credentials!" }
       end
