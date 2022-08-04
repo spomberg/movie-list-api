@@ -1,9 +1,9 @@
 module UserHelper
   def get_user_id
-    if !cookies[:user_id]
+    if !session[:user_id]
       false
     else
-      cookies.encrypted[:user_id]
+      session[:user_id][:value]
     end
   end
 end
