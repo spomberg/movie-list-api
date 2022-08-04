@@ -14,22 +14,26 @@ class ListController < ApplicationController
   def show
     if List.where(id: params[:id]).exists? 
       list = List.find(params[:id])
-      movies = []
-      list["movies"].each do |movie|
-        movies.push(extract_movie_info(movie))
+      if list.is_public || get_user_id == list.user_id
+        movies = []
+        list["movies"].each do |movie|
+          movies.push(extract_movie_info(movie))
+        end
+  
+        output = {
+          id: list["_id"],
+          title: list["title"],
+          username: User.find(list["user_id"])["username"],
+          created_on: list["created_on"],
+          description: list["description"],
+          is_public: list["is_public"],
+          movies: movies
+        }
+  
+        render json: output.to_json
+      else
+        render json: { status: "error", code: 401, message: "Invalid credentials!" }
       end
-
-      output = {
-        id: list["_id"],
-        title: list["title"],
-        username: User.find(list["user_id"])["username"],
-        created_on: list["created_on"],
-        description: list["description"],
-        is_public: list["is_public"],
-        movies: movies
-      }
-
-      render json: output.to_json
     else
       render json: { status: "error", code: 404, message: "Can't find list" }
     end
