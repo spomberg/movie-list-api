@@ -33,7 +33,7 @@ class SessionController < ApplicationController
       token = encode_user_data({ user_data: user._id })
 
       # return to user
-      render json: { token: token }
+      render json: { token: token, username: user["username"] }
     else
       render json: { message: "Invalid credentials" }
     end
