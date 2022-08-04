@@ -11,11 +11,8 @@ class SessionController < ApplicationController
 
       # if user is saved
       if user.save
-        # we encrypt user info using the pre-define methods in application controller
-        token = encode_user_data({ user_data: user._id })
-
         # return to user
-        render json: { token: token }
+        cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days }
       else
         # render error message
         render json: { message: "Invalid credentials" }
@@ -28,12 +25,8 @@ class SessionController < ApplicationController
 
     # you can use bcrypt to password authentication
     if user && user["password"] == params[:password]
-
-      # we encrypt user info using the pre-define methods in application controller
-      token = encode_user_data({ user_data: user._id })
-
       # return to user
-      render json: { token: token, username: user["username"] }
+      cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days }
     else
       render json: { message: "Invalid credentials" }
     end
