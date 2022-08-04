@@ -1,9 +1,9 @@
 module UserHelper
   def get_user_id
-    if !request.headers["token"]
+    if !cookies[:user_id]
       false
     else
-      decode_user_data(request.headers["token"])[0]["user_data"]
+      cookies.encrypted[:user_id]
     end
   end
 end
