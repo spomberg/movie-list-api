@@ -1,8 +1,18 @@
 class UserController < ApplicationController
   include ListHelper, UserHelper
 
-  def show
-    if authentication
+  def authenticate
+    if get_user_id
+      user = User.find(get_user_id)
+
+      render json: { code: 200, username: user["username"] }
+    else 
+      false
+    end
+  end
+
+  def view_lists
+    if get_user_id
 
       user_id = get_user_id
 

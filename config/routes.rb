@@ -6,15 +6,14 @@ Rails.application.routes.draw do
 
   root to: 'list#index'
 
-  resources :list, only: [:index, :show, :view, :new, :create, :edit, :search, :destroy]
-
-  resources :user, :session
+  resources :list, :user, :session
 
   get 'api/lists/' => 'list#index'
   get 'api/lists/:id' => 'list#show'
   get 'api/lists/:id/edit-view' => 'list#edit_view'
 
-  get 'api/user/lists' => 'user#show'
+  get 'api/user/' => 'user#authenticate'
+  get 'api/user/lists' => 'user#view_lists'
 
   post 'api/list/new' => 'list#new'
   post 'api/login' => 'session#login'
