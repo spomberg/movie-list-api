@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'api/lists/' => 'list#index'
   get 'api/lists/:id' => 'list#show'
+  get 'api/lists/:id/edit-view' => 'list#edit_view'
 
   get 'api/user/lists' => 'user#show'
 
