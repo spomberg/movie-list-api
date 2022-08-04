@@ -40,19 +40,24 @@ class ListController < ApplicationController
   end
 
   def new
-    new_list = {
-      _id: Nanoid.generate(size: 8),
-      title: params[:title],
-      description: params[:desc],
-      movies: [],
-      is_public: params[:is_public] == nil ? false : params[:is_public],
-      user_id: 0,
-      created_on: Time.now
-    }
+    if authentication
 
-    List.create(new_list)
-
-    render json: new_list.to_json
+      new_list = {
+        _id: Nanoid.generate(size: 8),
+        title: params[:title],
+        description: params[:desc],
+        movies: [],
+        is_public: params[:is_public] == nil ? false : params[:is_public],
+        user_id: get_user_id,
+        created_on: Time.now
+      }
+  
+      List.create(new_list)
+  
+      render json: new_list.to_json
+    else
+      render json: { status: "error", message: "Please login to create a new list" }
+    end
   end
 
   def edit
