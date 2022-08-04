@@ -40,7 +40,7 @@ class ListController < ApplicationController
   end
 
   def new
-    if authentication
+    if get_user_id
 
       new_list = {
         _id: Nanoid.generate(size: 8),
