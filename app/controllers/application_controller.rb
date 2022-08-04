@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
 
-  SECRET = "$9TRK6R%6Pri"
+  SECRET = ENV['SECRET_KEY']
 
   def authentication
-
     if request.headers["token"]
       # making a request to a secure route, token must be included in the headers
       decode_data = decode_user_data(request.headers["token"])
