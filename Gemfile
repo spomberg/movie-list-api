@@ -15,8 +15,6 @@ gem "rack-cors"
 
 gem "rails_same_site_cookie"
 
-gem "jwt"
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 6.1.5"
 
