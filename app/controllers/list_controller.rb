@@ -64,31 +64,35 @@ class ListController < ApplicationController
     if List.where(id: params[:id]).exists? 
       list = List.find(params[:id])
 
-      if params["title"] != nil || params["description"] != nil || params["is_public"] != nil
-        list["title"] = params["title"]
-        list["description"] = params["desc"]
-        list["is_public"] = params["is_public"]
+      if list["user_id"] == get_user_id
+        if params["title"] != nil || params["description"] != nil || params["is_public"] != nil
+          list["title"] = params["title"]
+          list["description"] = params["desc"]
+          list["is_public"] = params["is_public"]
+        end
+  
+        if params["add_movie"] != nil
+          add_movie(params["add_movie"].to_i, list)
+        end
+  
+        if params["remove_movie"] != nil
+          remove_movie(params["remove_movie"].to_i, list)
+        end
+  
+        if params["move_up"] != nil
+          move_up(list["movies"], params["move_up"].to_i)
+        end
+  
+        if params["move_down"] != nil
+          move_down(list["movies"], params["move_down"].to_i)
+        end
+  
+        list.upsert
+  
+        render json: { status: "success", code: 200, list: list }
+      else
+        render json: { status: "error", code: 401, message: "Invalid credentials!" }
       end
-
-      if params["add_movie"] != nil
-        add_movie(params["add_movie"].to_i, list)
-      end
-
-      if params["remove_movie"] != nil
-        remove_movie(params["remove_movie"].to_i, list)
-      end
-
-      if params["move_up"] != nil
-        move_up(list["movies"], params["move_up"].to_i)
-      end
-
-      if params["move_down"] != nil
-        move_down(list["movies"], params["move_down"].to_i)
-      end
-
-      list.upsert
-
-      render json: { status: "success", code: 200, list: list }
     else
       render json: { status: "error", code: 404, message: "Can't find list" }
     end
