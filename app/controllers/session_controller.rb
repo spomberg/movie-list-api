@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
   require 'nanoid'
+  include UserHelper
   
   def signup
 
@@ -21,15 +22,17 @@ class SessionController < ApplicationController
   end
 
   def login
-    user = User.find_by(:email => params[:email])
-
-    # you can use bcrypt to password authentication
-    if user && user["password"] == params[:password]
-      # return to user
-      cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days }
+    if User.where(:email => params[:email]).exists?
+      user = User.find_by(:email => params[:email])
+  
+      if user && user["password"] == params[:password]
+        cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days }
+      else
+        render json: { message: "Invalid credentials!" }
+      end
     else
-      render json: { message: "Invalid credentials" }
-    end
+      render json: { message: "Invalid credentials!" }
+    end 
   end
 
 end
