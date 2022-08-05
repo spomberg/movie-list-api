@@ -7,7 +7,7 @@ class UserController < ApplicationController
 
       render json: { code: 200, username: user["username"] }
     else 
-      false
+      render json: { code: 401, message: "Not authorized" }
     end
   end
 
