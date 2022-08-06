@@ -35,4 +35,8 @@ class SessionController < ApplicationController
     end 
   end
 
+  def logout
+    cookies.delete :user_id
+  end
+
 end
