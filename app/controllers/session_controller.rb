@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
-  require 'nanoid'
+  require 'nanoid' 
+  require 'bcrypt'
   include UserHelper
   
   def signup
@@ -8,7 +9,10 @@ class SessionController < ApplicationController
       render json: { message: "This email or username has already been taken!" }
     else
 
-      user = User.new(_id: Nanoid.generate(size: 8), username:params[:username], email: params[:email], password: params[:password])
+      user = User.new(_id: Nanoid.generate(size: 8), 
+              username:params[:username], 
+              email: params[:email], 
+              password_hash: BCrypt::Password.create(params[:password]))
 
       # if user is saved
       if user.save
@@ -25,7 +29,7 @@ class SessionController < ApplicationController
     if User.where(:email => params[:email]).exists?
       user = User.find_by(:email => params[:email])
   
-      if user && user["password"] == params[:password]
+      if user && BCrypt::Password.new(user["password_hash"]) == params[:password]
         cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days }
       else
         render json: { message: "Invalid credentials!" }
