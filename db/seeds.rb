@@ -1,5 +1,6 @@
 require 'faker'
 require 'http'
+require 'bcrypt'
 include ListHelper
 
 puts "Seeding data..."
@@ -17,7 +18,7 @@ puts "Creating users..."
     _id: index,
     username: Faker::Internet.unique.username, 
     email: Faker::Internet.unique.email, 
-    password: Faker::Internet.password
+    password_hash: BCrypt::Password.create('1989')
   )
 end
 
