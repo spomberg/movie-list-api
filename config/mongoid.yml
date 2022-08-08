@@ -166,7 +166,6 @@ test:
 production:
   clients:
     default:
-      database: my-movie-list
       uri: <%= ENV['MONGODB_URI'] %>
       options:
         server_selection_timeout: 5
