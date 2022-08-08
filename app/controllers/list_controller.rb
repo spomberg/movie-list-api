@@ -8,7 +8,7 @@ class ListController < ApplicationController
 
     output = get_list_index_info(lists)
 
-    render json: output.to_json
+    render json: { status: "success", code: 200, lists: output }
   end
 
   def show
