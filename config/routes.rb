@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root to: 'list#index'
-
   resources :list, :user, :session
 
   get 'api/lists/' => 'list#index'
