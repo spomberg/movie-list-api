@@ -18,17 +18,7 @@ class UserController < ApplicationController
 
       lists = List.where(:user_id => user_id).order_by([:created_on, :desc])
   
-      output = []
-      
-      lists.each do |list|
-        output.push({
-          id: list["_id"],
-          title: list["title"],
-          created_on: list["created_on"]
-        })
-      end
-      
-      output
+      output = get_list_index_info(lists)
   
       render json: { code: 200, list: output }
     else
