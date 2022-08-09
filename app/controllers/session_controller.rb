@@ -17,7 +17,7 @@ class SessionController < ApplicationController
       # if user is saved
       if user.save
         # return to user
-        cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days, same_site: 'None', secure: true }
+        cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days, same_site: 'Strict', secure: true }
       else
         # render error message
         render json: { message: "Invalid credentials" }
@@ -30,7 +30,7 @@ class SessionController < ApplicationController
       user = User.find_by(:email => params[:email])
   
       if user && BCrypt::Password.new(user["password_hash"]) == params[:password]
-        cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days, same_site: 'None', secure: true }
+        cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days, same_site: 'Strict', secure: true }
       else
         render json: { message: "Invalid credentials!" }
       end
