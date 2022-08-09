@@ -41,6 +41,7 @@ class SessionController < ApplicationController
 
   def logout
     cookies.delete :user_id
+    render json: { code: 200 }
   end
 
 end
