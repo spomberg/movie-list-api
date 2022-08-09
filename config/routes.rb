@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'api/lists/' => 'list#index'
   get 'api/lists/:id' => 'list#show'
   get 'api/lists/:id/edit-view' => 'list#edit_view'
+  get 'api/logout' => 'session#logout'
   
   get 'api/user/' => 'user#authenticate'
   get 'api/user/lists' => 'user#view_lists'
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   
   put 'api/list/:id/edit' => 'list#edit'
   put 'api/list/search-movie' => 'list#search'
-  put 'api/logout' => 'session#logout'
   
   delete 'api/list/:id/delete' => 'list#destroy'
   
