@@ -17,7 +17,7 @@ class SessionController < ApplicationController
       # if user is saved
       if user.save
         # return to user
-        cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days }
+        cookies.encrypted[:user_id] = { value: user['_id'], expires: 7.days, same_site: 'Lax', domain: 'all', httponly: false }
       else
         # render error message
         render json: { message: "Invalid credentials" }
