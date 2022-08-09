@@ -40,7 +40,7 @@ class SessionController < ApplicationController
   end
 
   def logout
-    cookies.delete :user_id
+    cookies.encrypted[:user_id] = { value: nil, same_site: 'Strict' }
     render json: { code: 200 }
   end
 
