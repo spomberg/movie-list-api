@@ -131,7 +131,7 @@ class ListController < ApplicationController
 
   def search
     output = []
-    search_param = params[:query].gsub(" ", "&20")
+    search_param = params[:query].gsub(" ", "%20")
     search_results = (HTTP.get("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['TMDB_API_KEY']}&query=#{search_param}")).parse
 
     search_results["results"].each do |result|
