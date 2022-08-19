@@ -1,6 +1,6 @@
 # My Movie List API
 
-Currently deployed and hosted at mymovielist.ca.
+Currently deployed and hosted at [mymovielist.ca](https://mymovielist.ca).
 
 Full-stack app for users to create, edit and share movie lists with their friends. Built with React, Ruby on Rails, MongoDB and the TMDB API. Tested with Jest and Storybook.
 
