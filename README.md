@@ -6,13 +6,13 @@ Full-stack app for users to create, edit and share movie lists with their friend
 
 This app allows users to:
 
-Create accounts
-Create public and private Movie Lists
-View the 20 most recent lists created
-View their personal movie lists
-Edit lists (add and remove movies and reorder them)
-Delete lists
-Share public lists with other users
+- Create accounts
+- Create public and private Movie Lists
+- View the 20 most recent lists created
+- View their personal movie lists
+- Edit lists (add and remove movies and reorder them)
+- Delete lists
+- Share public lists with other users
 
 This is an API that is meant to be used with conjunction with the [frontend app](https://github.com/spomberg/my-movie-list).
 
