@@ -40,3 +40,13 @@ This is an API that is meant to be used with conjunction with the [frontend app]
 - Change the `ORIGIN` env variable to the frontend app localhost URL.
 - Change the `MongoDB_URI` env variable to your MongoDB url.
 - Run `rails start` to start the app.
+
+## Author
+
+- Portfolio - [spomberg.com](https://spomberg.com)
+- LinkedIn - [/marcos-spomberg](https://www.linkedin.com/in/marcos-spomberg/)
+
+### Other projects
+
+- My Movie List - [Site](https://mymovielist.ca) / [Repo](https://github.com/spomberg/my-movie-list)
+- Password Generator App - [Site](https://password-generator.spomberg.com) / [Repo](https://github.com/spomberg/password-generator-app)
