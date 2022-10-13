@@ -1,8 +1,17 @@
 # My Movie List API
 
+Full-stack app for users to create, edit and share movie lists with their friends. Built with React, Ruby on Rails, MongoDB and the TMDB API. Tested with RSpec.
+
 Currently deployed and hosted at [mymovielist.ca](https://mymovielist.ca).
 
-Full-stack app for users to create, edit and share movie lists with their friends. Built with React, Ruby on Rails, MongoDB and the TMDB API. Tested with RSpec.
+## Table of contents
+
+- [Overview](#overview)
+- [Built with](#built-with)
+- [Instructions](#instructions)
+- [Author](#author)
+
+## Overview
 
 This app allows users to:
 
@@ -18,7 +27,13 @@ This is an API that is meant to be used with conjunction with the [frontend app]
 
 ![Usage GIF](https://github.com/spomberg/my-movie-list/blob/main/src/assets/ezgif-1-eb722a5992.gif?raw=true)
 
-## Dependencies
+## Built With
+
+- React
+- Ruby on Rails
+- MongoDB
+
+### Dependencies
 
 - HTTP
 - Faker
@@ -40,3 +55,13 @@ This is an API that is meant to be used with conjunction with the [frontend app]
 - Change the `ORIGIN` env variable to the frontend app localhost URL.
 - Change the `MongoDB_URI` env variable to your MongoDB url.
 - Run `rails start` to start the app.
+
+## Author
+
+- Portfolio - [spomberg.com](https://spomberg.com)
+- LinkedIn - [/marcos-spomberg](https://www.linkedin.com/in/marcos-spomberg/)
+
+### Other projects
+
+- My Movie List - [Site](https://mymovielist.ca) / [Repo](https://github.com/spomberg/my-movie-list)
+- Password Generator App - [Site](https://password-generator.spomberg.com) / [Repo](https://github.com/spomberg/password-generator-app)
