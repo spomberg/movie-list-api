@@ -27,6 +27,16 @@ This is an API that is meant to be used with conjunction with the [frontend app]
 
 ![Usage GIF](https://github.com/spomberg/my-movie-list/blob/main/src/assets/ezgif-1-eb722a5992.gif?raw=true)
 
+### The Challenge
+
+This was my first solo full-stack project out of bootcamp, the challenge was planning and creating all aspects of the project with no external help aside from Google. 
+
+I started out by designing the database and as another learning opportunity I decided to use a NoSQL database (MongoDB) for the first time. 
+
+Since I didn't have much free time available for this project I chose to build the backend on Ruby on Rails because it was a framework I was familiarized with and it would enable me to get the API running in less time.
+
+For the front end, the chosen framework was React, another technology I was familiar with and which I wanted to be more profecient in. 
+
 ## Built With
 
 - React
