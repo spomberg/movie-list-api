@@ -8,6 +8,7 @@ Currently deployed and hosted at [mymovielist.ca](https://mymovielist.ca).
 
 - [Overview](#overview)
   - [The Challenge](#the-challenge)
+  - [Screenshots](#screenshots)
 - [Built with](#built-with)
 - [Instructions](#instructions)
 - [Author](#author)
@@ -27,7 +28,25 @@ This app allows users to:
 
 This is an API that is meant to be used with conjunction with the [frontend app](https://github.com/spomberg/my-movie-list).
 
+### Screenshots
+
 ![Usage GIF](https://github.com/spomberg/my-movie-list/blob/main/src/assets/ezgif-1-eb722a5992.gif?raw=true)
+
+Main Page
+
+![Main Page](https://github.com/spomberg/my-movie-list/blob/main/src/assets/home_screen.png?raw=true)
+
+List Page
+
+![List Page](https://github.com/spomberg/my-movie-list/blob/main/src/assets/list_screen.png?raw=true)
+
+Edit List Page
+
+![Edit List Page](https://github.com/spomberg/my-movie-list/blob/main/src/assets/edit_screen.png?raw=true)
+
+Add Movie Page
+
+![Add Movie Page](https://github.com/spomberg/my-movie-list/blob/main/src/assets/add_movie.png?raw=true)
 
 ### The Challenge
 
