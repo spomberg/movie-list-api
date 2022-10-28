@@ -28,6 +28,8 @@ This app allows users to:
 
 This is an API that is meant to be used with conjunction with the [frontend app](https://github.com/spomberg/my-movie-list).
 
+![Usage GIF](https://github.com/spomberg/my-movie-list/blob/main/src/assets/ezgif-1-eb722a5992.gif?raw=true)
+
 ### The Challenge
 
 This was my first solo full-stack project out of bootcamp, the challenge was planning and creating all aspects of the project with no external help aside from Google. 
@@ -39,8 +41,6 @@ Since I didn't have much free time available for this project I chose to build t
 For the front end, the chosen framework was React, another technology I was familiar with and which I wanted to be more profecient in. 
 
 ### Screenshots
-
-![Usage GIF](https://github.com/spomberg/my-movie-list/blob/main/src/assets/ezgif-1-eb722a5992.gif?raw=true)
 
 Main Page
 
