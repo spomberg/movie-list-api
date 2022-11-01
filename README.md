@@ -75,6 +75,12 @@ Add Movie Page
 - Rack-CORS
 - BCrypt
 
+## What I learned
+
+### Work with external APIs
+
+While I had used external APIs before, I had never worked on a project of this scope that was so reliant on one. I spent a significant amount of time reading the API's documentation just to learn what I could and couldn't do with it and how I could use it to achieve my goals before I wrote a single line of code. Now I feel confident that in the future I will be able to get familiarized with new APIs in no time. 
+
 ## Instructions
 
 - Follow the instructions to set up the frontend app [here](https://github.com/spomberg/my-movie-list).
