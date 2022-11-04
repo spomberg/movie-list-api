@@ -10,6 +10,7 @@ Currently deployed and hosted at [mymovielist.ca](https://mymovielist.ca).
   - [The Challenge](#the-challenge)
   - [Screenshots](#screenshots)
 - [Built with](#built-with)
+- [What I learned](#what-i-learned)
 - [Instructions](#instructions)
 - [Author](#author)
   - [Other Projects](#other-projects)
