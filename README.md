@@ -11,6 +11,8 @@ Currently deployed and hosted at [mymovielist.ca](https://mymovielist.ca).
   - [Screenshots](#screenshots)
 - [Built with](#built-with)
 - [What I learned](#what-i-learned)
+  - [Work with external APIs](#work-with-external-apis)
+  - [Research documentation](#research-documentation)
 - [Instructions](#instructions)
 - [Author](#author)
   - [Other Projects](#other-projects)
