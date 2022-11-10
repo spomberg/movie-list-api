@@ -1,4 +1,4 @@
-# My Movie List API
+# My Movie List (API)
 
 Full-stack app for users to create, edit and share movie lists with their friends. Built with React, Ruby on Rails, MongoDB and the TMDB API. Tested with RSpec.
 
