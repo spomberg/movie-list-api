@@ -13,6 +13,7 @@ Currently deployed and hosted at [mymovielist.ca](https://mymovielist.ca).
 - [What I learned](#what-i-learned)
   - [Work with external APIs](#work-with-external-apis)
   - [Research documentation](#research-documentation)
+  - [NoSQL](#nosql)
 - [Instructions](#instructions)
 - [Author](#author)
   - [Other Projects](#other-projects)
@@ -87,6 +88,10 @@ While I had used external APIs before, I had never worked on a project of this s
 ### Research documentation
 
 To build this application, besides the external API, I also used 8 libraries that I had never worked with before. It took a lot of research to just find out which solutions already existed for the problems I needed to solve and then a lot of documentation reading to figure out how to implement them in my project. It was interesting to realize how much of the time allocated to this project was spent researching and reading. 
+
+### NoSQL
+
+Up until this point, I only had experience with relational databases, so I wanted to take this opportunity to learn how to use a NoSQL database, and for this project I chose MongoDB. I had to step out of my comfort zone and learn by myself how to handle a completely different type of database with only the help of Google, Stack Overflow and the available documentation. In the end, I was able to make MongoDB work exactly the way I had envisioned for this project, which was so rewarding.
 
 ## Instructions
 
