@@ -16,7 +16,7 @@ Currently deployed and hosted at [mymovielist.ca](https://mymovielist.ca).
   - [NoSQL](#nosql)
 - [Instructions](#instructions)
 - [Author](#author)
-  - [Other Projects](#other-projects)
+- [Other Projects](#other-projects)
 
 ## Overview
 
@@ -112,7 +112,7 @@ Up until this point, I only had experience with relational databases, so I wante
 - Portfolio - [spomberg.com](https://spomberg.com)
 - LinkedIn - [/marcos-spomberg](https://www.linkedin.com/in/marcos-spomberg/)
 
-### Other projects
+## Other projects
 
 - My Movie List - [Site](https://mymovielist.ca) / [Repo](https://github.com/spomberg/my-movie-list)
 - Password Generator App - [Site](https://password-generator.spomberg.com) / [Repo](https://github.com/spomberg/password-generator-app)
