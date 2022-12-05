@@ -125,3 +125,4 @@ My goal is to now use my skills to make meaningful connections, exchange knowled
 
 - My Movie List - [Site](https://mymovielist.ca) / [Repo](https://github.com/spomberg/my-movie-list)
 - Password Generator App - [Site](https://password-generator.spomberg.com) / [Repo](https://github.com/spomberg/password-generator-app)
+- Memory Game - [Site](https://memory.spomberg.com) / [Repo](https://github.com/spomberg/memory)
