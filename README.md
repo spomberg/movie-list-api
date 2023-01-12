@@ -40,7 +40,7 @@ This was my first solo full-stack project out of bootcamp, the challenge was pla
 
 I chose to create a movie lists application after I learned about the TMDB API and since I'm a nerd who loves films I thought this would be something fun to work on (luckily, I was right). The first challenge was reading the API's documentation to learn how I could leverage it to achieve my goals.
 
-The next steps were designing the wireframes and the the database, as another learning opportunity I decided to use a NoSQL database (MongoDB) for the first time. 
+The next steps were designing the wireframes and the database, as another learning opportunity I decided to use a NoSQL database (MongoDB) for the first time. 
 
 Since I didn't have much free time available for this project I chose to build the backend on Ruby on Rails because it was a framework I was familiarized with and it would enable me to get the API running in less time.
 
